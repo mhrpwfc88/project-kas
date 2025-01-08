@@ -42,12 +42,12 @@ Route::middleware('auth')->group(function () {
     Route::put('bulan_pembayarans/{id}', [BulanController::class, 'update'])->name('bulan.update');
     Route::delete('bulan_pembayarans/{id}', [BulanController::class, 'destroy'])->name('bulan.destroy');
 
-    Route::get('uang_kasses', [UangKasessController::class, 'index'])->name('uang_kasses.index');
-    Route::get('uang_kasses/create', [UangKasessController::class, 'create'])->name('uang_kasses.create');
-    Route::post('uang_kasses', [UangKasessController::class, 'store'])->name('uang_kasses.store');
-    Route::get('uang_kasses/{id}', [UangKasessController::class, 'show'])->name('uang_kasses.show');
-    Route::get('uang_kasses/{id}/edit', [UangKasessController::class, 'edit'])->name('uang_kasses.edit');
-    Route::delete('uang_kasses/{id}', [UangKasessController::class, 'destroy'])->name('uang_kasses.destroy');
+    // Route::get('uang_kasses', [UangKasessController::class, 'index'])->name('uang_kasses.index');
+    // Route::get('uang_kasses/create', [UangKasessController::class, 'create'])->name('uang_kasses.create');
+    // Route::post('uang_kasses', [UangKasessController::class, 'store'])->name('uang_kasses.store');
+    // Route::get('uang_kasses/{id}', [UangKasessController::class, 'show'])->name('uang_kasses.show');
+    // Route::get('uang_kasses/{id}/edit', [UangKasessController::class, 'edit'])->name('uang_kasses.edit');
+    // Route::delete('uang_kasses/{id}', [UangKasessController::class, 'destroy'])->name('uang_kasses.destroy');
 
 
     Route::get('pengeluarans', [PengeluaranController::class, 'index'])->name('keluar.index');

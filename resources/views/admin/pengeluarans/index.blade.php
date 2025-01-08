@@ -37,9 +37,14 @@
                         Kembali
                     </button>
                 </a>
-                <a href="{{route('siswas.create')}}">
+                <a href="{{ route('keluar.create') }}">
                     <button class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                         Tambah Pengeluaran
+                    </button>
+                </a>
+                <a href="">
+                    <button class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
+                        Laporan
                     </button>
                 </a>
 
@@ -59,21 +64,16 @@
                                 <tr>
                                     <td>{{ $keluar->keterangan }}</td>
                                     <td>Rp.{{ number_format($keluar->jumlah_pengeluaran, 2, ',', '.') }}</td>
-                                    <td>{{ $keluar->created_at ? $keluar->created_at->format('d-m-Y H:i:s') : 'Tidak Diketahui' }}</td>
+                                    <td>{{ $keluar->created_at ? $keluar->created_at->format('d-m-Y H:i:s') : 'Tidak Diketahui' }}
+                                    </td>
                                     <td>
-                                        {{-- <a href="{{ route('siswas.show', $siswa->id) }}" class="text-blue-500">
-                                            <button type="submit"
-                                                class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                                                Detail
-                                            </button>
-                                        </a> --}}
                                         <a href="" class="text-blue-500">
                                             <button type="submit"
                                                 class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                                                 Edit
                                             </button>
                                         </a>
-                                        <form id="deleteForm" action=""
+                                        <form id="deleteForm" action="{{ route('keluar.destroy', $keluar->id) }}"
                                             method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')

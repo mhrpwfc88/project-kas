@@ -30,9 +30,15 @@
             </a>
             <a href="{{route('keluar.index')}}">
                 <button class="mb-5 font-semibold ml-5 rounded-md p-3 bg-gray-900 text-slate-200 dark:bg-white dark:text-gray-900 ">
+                    Pemasukan
+                </button>
+            </a>
+            <a href="{{route('keluar.index')}}">
+                <button class="mb-5 font-semibold ml-5 rounded-md p-3 bg-gray-900 text-slate-200 dark:bg-white dark:text-gray-900 ">
                     Pengeluaran
                 </button>
             </a>
+            
         </div>
     </div>
 </div>

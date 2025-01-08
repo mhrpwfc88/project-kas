@@ -57,12 +57,12 @@
                                 <tr>
                                     <td>{{ $siswa->nama }}</td>
                                     <td>
-                                        <a href="{{ route('siswas.show', $siswa->id) }}" class="text-blue-500">
+                                        {{-- <a href="{{ route('siswas.show', $siswa->id) }}" class="text-blue-500">
                                             <button type="submit"
                                                 class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                                                 Detail
                                             </button>
-                                        </a>
+                                        </a> --}}
                                         <a href="{{ route('siswas.edit', $siswa->id) }}" class="text-blue-500">
                                             <button type="submit"
                                                 class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">

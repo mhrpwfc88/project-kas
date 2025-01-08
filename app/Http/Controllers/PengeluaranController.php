@@ -33,7 +33,7 @@ class PengeluaranController extends Controller
             'jumlah_pengeluaran' => $request->jumlah_pengeluaran,
         ]);
 
-        return redirect()->route('pengeluarans.index')->with('success', 'Pengeluaran berhasil ditambahkan.');
+        return redirect()->route('keluar.index')->with('success', 'Pengeluaran berhasil ditambahkan.');
     }
 
     // Menampilkan detail data pengeluaran
@@ -73,6 +73,6 @@ class PengeluaranController extends Controller
     {
         $pengeluaran = Pengeluaran::findOrFail($id);
         $pengeluaran->delete();
-        return redirect()->route('pengeluarans.index')->with('success', 'Pengeluaran berhasil dihapus.');
+        return redirect()->route('keluar.index')->with('success', 'Pengeluaran berhasil dihapus.');
     }
 }
