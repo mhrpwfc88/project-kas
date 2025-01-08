@@ -42,8 +42,9 @@ class BulanController extends Controller
     {
         $uangKasses = uangKass::with('siswa')->where('bulan_id', $bulanId)->get();
         $bulan = bulanPembayaran::findOrFail($bulanId);
+        $totalBayar = uangKass::where('bulan_id', $bulanId)->sum('bayar');
 
-        return view('admin.kas.index', compact('uangKasses','bulan'));
+        return view('admin.kas.index', compact('uangKasses','bulan','totalBayar'));
     }
     public function edit($id)
     {

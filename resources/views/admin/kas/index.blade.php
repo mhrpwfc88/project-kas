@@ -37,6 +37,7 @@
                         Kembali
                     </button>
                 </a>
+                <p class="mt-2 ml-2">Total Kas :   Rp.{{ number_format($totalBayar, 2, ',', '.') }}</p>
                 {{-- <a href="{{route('bulan.create')}}">
                     <button class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                         Tambah Bulan Kas
