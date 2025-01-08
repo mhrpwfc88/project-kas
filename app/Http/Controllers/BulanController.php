@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\BulanCreated;
 use App\Models\bulanPembayaran;
+use App\Models\pengeluaran;
 use App\Models\uangKass;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class BulanController extends Controller
     public function index()
     {
         $bulanPembayarans = bulanPembayaran::all();
-        return view('admin.bulan.index', compact('bulanPembayarans'));
+        $kas = uangKass::all()->sum('bayar');
+        $pengeluaran = pengeluaran::all()->sum('jumlah_pengeluaran');
+        $totalBayar = $kas - $pengeluaran;
+        return view('admin.bulan.index', compact('bulanPembayarans' ,'totalBayar','pengeluaran','kas'));
     }
     public function create()
     {

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Kas Tiap Bulan') }}
+            {{ __('Pengeluaran') }}
         </h2>
     </x-slot>
 
@@ -37,45 +37,43 @@
                         Kembali
                     </button>
                 </a>
-                <a href="{{route('bulan.create')}}">
+                <a href="{{route('siswas.create')}}">
                     <button class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                        Tambah Bulan Kas
+                        Tambah Pengeluaran
                     </button>
                 </a>
-                <p class="mt-2 ml-2">Total Pemasukan kas : Rp.{{ number_format($kas, 2, ',', '.') }}</p>
-                <p class="mt-2 ml-2">Total Pengeluaran kas :  Rp.{{ number_format($pengeluaran, 2, ',', '.') }}</p>
-                <p class="mt-2 ml-2">Total kas :  Rp.{{ number_format($totalBayar, 2, ',', '.') }}</p>
+
                 <div id='recipients' class="p-8 mt-6 lg:mt-0 text-white  dark:bg-gray-800 rounded shadow ">
                     <table id="example" class="stripe hover"
                         style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
                         <thead>
                             <tr>
-                                <th data-priority="1">id</th>
-                                <th >Nama</th>
-                                <th >Tahun</th>
-                                <th >aksi</th>
+                                <th data-priority="1">Keterangan</th>
+                                <th data-priority="1">Jumlah</th>
+                                <th data-priority="1">tanggal</th>
+                                <th data-priority="4">aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($bulanPembayarans as $bulan)
+                            @foreach ($pengeluarans as $keluar)
                                 <tr>
-                                    <td>{{ $bulan->id }}</td>
-                                    <td>{{ $bulan->bulan }}</td>
-                                    <td>{{ $bulan->tahun }}</td>
+                                    <td>{{ $keluar->keterangan }}</td>
+                                    <td>Rp.{{ number_format($keluar->jumlah_pengeluaran, 2, ',', '.') }}</td>
+                                    <td>{{ $keluar->created_at ? $keluar->created_at->format('d-m-Y H:i:s') : 'Tidak Diketahui' }}</td>
                                     <td>
-                                        <a href="{{route('bulan.kas', $bulan->id)}}" class="text-blue-500">
+                                        {{-- <a href="{{ route('siswas.show', $siswa->id) }}" class="text-blue-500">
                                             <button type="submit"
                                                 class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
-                                                Masuk
+                                                Detail
                                             </button>
-                                        </a>
-                                        {{-- <a href="" class="text-blue-500">
+                                        </a> --}}
+                                        <a href="" class="text-blue-500">
                                             <button type="submit"
                                                 class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                                                 Edit
                                             </button>
-                                        </a> --}}
-                                        {{-- <form id="deleteForm" action="{{route('bulan.destroy', $bulan->id )}}"
+                                        </a>
+                                        <form id="deleteForm" action=""
                                             method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
@@ -83,7 +81,7 @@
                                                 class="bg-red-600 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                                                 Hapus
                                             </button>
-                                        </form> --}}
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

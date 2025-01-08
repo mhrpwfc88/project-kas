@@ -50,13 +50,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('uang_kasses/{id}', [UangKasessController::class, 'destroy'])->name('uang_kasses.destroy');
 
 
-    Route::get('pengeluarans', [PengeluaranController::class, 'index'])->name('pengeluarans.index');
-    Route::get('pengeluarans/create', [PengeluaranController::class, 'create'])->name('pengeluarans.create');
-    Route::post('pengeluarans', [PengeluaranController::class, 'store'])->name('pengeluarans.store');
-    Route::get('pengeluarans/{id}', [PengeluaranController::class, 'show'])->name('pengeluarans.show');
-    Route::get('pengeluarans/{id}/edit', [PengeluaranController::class, 'edit'])->name('pengeluarans.edit');
-    Route::put('pengeluarans/{id}', [PengeluaranController::class, 'update'])->name('pengeluarans.update');
-    Route::delete('pengeluarans/{id}', [PengeluaranController::class, 'destroy'])->name('pengeluarans.destroy');
+    Route::get('pengeluarans', [PengeluaranController::class, 'index'])->name('keluar.index');
+    Route::get('pengeluarans/create', [PengeluaranController::class, 'create'])->name('keluar.create');
+    Route::post('pengeluarans', [PengeluaranController::class, 'store'])->name('keluar.store');
+    Route::get('pengeluarans/{id}', [PengeluaranController::class, 'show'])->name('keluar.show');
+    Route::get('pengeluarans/{id}/edit', [PengeluaranController::class, 'edit'])->name('keluar.edit');
+    Route::put('pengeluarans/{id}', [PengeluaranController::class, 'update'])->name('keluar.update');
+    Route::delete('pengeluarans/{id}', [PengeluaranController::class, 'destroy'])->name('keluar.destroy');
 
     Route::get('/uang-kas/{bulanId}', [BulanController::class, 'showByBulan'])->name('bulan.kas');
     Route::get('/uang-kas/edit/{id}', [UangKasessController::class, 'edit'])->name('kas.edit');
