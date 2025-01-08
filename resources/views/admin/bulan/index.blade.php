@@ -28,6 +28,18 @@
         </div>
     @endif
 
+    <div class="py-7">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <p class="mt-2 ml-2">Total Pemasukan kas : Rp.{{ number_format($kas, 2, ',', '.') }}</p>
+                    <p class="mt-2 ml-2">Total Pengeluaran kas : Rp.{{ number_format($pengeluaran, 2, ',', '.') }}</p>
+                    <p class="mt-2 ml-2">Total kas : Rp.{{ number_format($totalBayar, 2, ',', '.') }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <div class="max-w-7xl mx-auto mt-10 sm:px-6 lg:px-8">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
@@ -37,23 +49,21 @@
                         Kembali
                     </button>
                 </a>
-                <a href="{{route('bulan.create')}}">
+                <a href="{{ route('bulan.create') }}">
                     <button class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                         Tambah Bulan Kas
                     </button>
                 </a>
-                <p class="mt-2 ml-2">Total Pemasukan kas : Rp.{{ number_format($kas, 2, ',', '.') }}</p>
-                <p class="mt-2 ml-2">Total Pengeluaran kas :  Rp.{{ number_format($pengeluaran, 2, ',', '.') }}</p>
-                <p class="mt-2 ml-2">Total kas :  Rp.{{ number_format($totalBayar, 2, ',', '.') }}</p>
+
                 <div id='recipients' class="p-8 mt-6 lg:mt-0 text-white  dark:bg-gray-800 rounded shadow ">
                     <table id="example" class="stripe hover"
                         style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
                         <thead>
                             <tr>
                                 <th data-priority="1">id</th>
-                                <th >Nama</th>
-                                <th >Tahun</th>
-                                <th >aksi</th>
+                                <th>Nama</th>
+                                <th>Tahun</th>
+                                <th>aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,7 +73,7 @@
                                     <td>{{ $bulan->bulan }}</td>
                                     <td>{{ $bulan->tahun }}</td>
                                     <td>
-                                        <a href="{{route('bulan.kas', $bulan->id)}}" class="text-blue-500">
+                                        <a href="{{ route('bulan.kas', $bulan->id) }}" class="text-blue-500">
                                             <button type="submit"
                                                 class="bg-gray-900 hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded">
                                                 Masuk
